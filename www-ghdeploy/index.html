@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+    <!-- Write your application here -->
+
+    <p>
+      <div id="time">time</div>
+      <div id="period">period</div>
+      <div id="timeleft">timeleft</div>
+    </p>
+    
+    <button id="install-btn">Install</button>
+
+    <!-- Using require.js, a module system for javascript, include the
+         js files. This loads "main.js", which in turn can load other
+         files, all handled by require.js:
+         http://requirejs.org/docs/api.html#jsfiles -->
+    <script type="text/javascript" data-main="js/init.js" src="js/lib/require.js"></script>
+  </body>
+</html>
