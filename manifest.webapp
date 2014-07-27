@@ -2,18 +2,18 @@
   "version": "0.1",
   "name": "Timetable",
   "description": "Sheffield UTC Count Downs",
-  "launch_path": "/index.html",
+  "launch_path": "/utctimetable/index.html",
   "icons": {
-    "16": "/img/icons/mortar-16.png",
-    "48": "/img/icons/mortar-48.png",
-    "128": "/img/icons/mortar-128.png"
+    "16": "/utctimetable/img/icons/mortar-16.png",
+    "48": "/utctimetable/img/icons/mortar-48.png",
+    "128": "/utctimetable/img/icons/mortar-128.png"
   },
   "developer": {
     "name": "Martyn Eggleton",
     "url": "https://stretchyboy.github.io/utctimetable/"
   },
   "installs_allowed_from": ["*"],
-  "appcache_path": "/cache.manifest",
+  "appcache_path": "/utctimetable/cache.manifest",
   "locales": {
     
   },
