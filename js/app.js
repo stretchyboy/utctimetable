@@ -24,22 +24,22 @@ define(function(require) {
                    {name:"Before School",  hour: 0, minutes:0},
                    {name:"Period 1",       hour: 8, minutes:30},
                    {name:"Period 2",       hour: 9, minutes:20},
-                   {name:"VMG",            hour:10, minutes:10},
-                   {name:"Break",          hour:10, minutes:35},
-                   {name:"Period 3",       hour:10, minutes:55},
-                   {name:"Period 4",       hour:11, minutes:45},
-                   {name:"Period 5a Lunch",hour:12, minutes:35},
-                   {name:"Period 5b",      hour:13, minutes:25},
-                   {name:"Period 6",       hour:14, minutes:15},
-                   {name:"Break",          hour:15, minutes:05},
-                   {name:"Period 7",       hour:15, minutes:20},
-                   {name:"Enrichment",     hour:16, minutes:10},
-                   {name:"After School",   hour:17, minutes:00},
+                   {name:"Tutor b/Break a",hour:10, minutes:10},
+                   {name:"Tutor a/Break b",hour:10, minutes:30},
+                   {name:"Period 3",       hour:10, minutes:50},
+                   {name:"Period 4",       hour:11, minutes:40},
+                   {name:"Period 5a (Lunch)",hour:12, minutes:30},
+                   {name:"Period 5b (Lunch)",hour:13, minutes:15},
+                   {name:"Period 6",       hour:14, minutes:00},
+                   {name:"Break",          hour:14, minutes:50},
+                   {name:"Period 7",       hour:15, minutes:05},
+                   {name:"Enrichment",     hour:15, minutes:55},
+                   {name:"After School",   hour:16, minutes:45},
                    {name:"Night",  hour:23, minutes:59}
                  ];
     periods.forEach(function(element, index, array){
-      array[index].totseconds =(((element.hour * 60) +element.minutes) * 60) +0;
-    })
+      array[index].totseconds = (((element.hour * 60) +element.minutes) * 60) +0;
+    });
     
     var checktime = function(){
         var curtime = new Date();
@@ -57,9 +57,14 @@ define(function(require) {
             //console.log("loopcount", loopcount);
             //console.log("period while", periods[0]);
         
-            gone = periods.shift();
-            //console.log(gone);
+            
+            console.log("periods before gone=", periods);
+            var gone = periods.shift();
+            console.log(gone);
+            
             periods.push(gone);
+            
+            console.log("periods after push=", periods);
         }
             
             
@@ -68,7 +73,7 @@ define(function(require) {
         $("#time").html(timetext);
         $("#period").html(periods[0].name);
         
-        var secsleft = periods[1].totseconds -  daytime
+        var secsleft = periods[1].totseconds -  daytime;
         //console.log(secsleft);
         var lefttext = Math.round(secsleft/60)+" minutes remaining";//+":"+ (secsleft % 60);
         $("#timeleft").html(lefttext);
